@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace CleanArchitecture.Application.Users.Commands;
 
-public class CreateUserCommandHandler : AbstractValidator<CreateUserCommand>
+public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {
-    public CreateUserCommandHandler()
+    public CreateUserCommandValidator()
     {
         RuleFor(u => u.FirstName)
                .NotEmpty().WithMessage("this field is required")
