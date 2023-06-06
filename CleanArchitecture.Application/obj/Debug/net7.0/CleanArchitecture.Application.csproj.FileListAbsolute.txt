@@ -10,3 +10,6 @@ C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Appl
 C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net7.0\refint\CleanArchitecture.Application.dll
 C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net7.0\CleanArchitecture.Application.pdb
 C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net7.0\ref\CleanArchitecture.Application.dll
+C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Application\bin\Debug\net7.0\CleanArchitecture.Domain.dll
+C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Application\bin\Debug\net7.0\CleanArchitecture.Domain.pdb
+C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net7.0\CleanArchitecture.Application.csproj.CopyComplete

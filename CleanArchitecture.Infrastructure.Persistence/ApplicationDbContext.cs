@@ -1,12 +1,10 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Persistence.Extensions;
+﻿using CleanArchitecture.Application.Common;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace CleanArchitecture.Infrastructure.Persistence;
 
-public class ApplicationDbContext : DbContext
+public partial class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
@@ -17,7 +15,6 @@ public class ApplicationDbContext : DbContext
     {
         modelBuilder.HasDefaultSchema("base");
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        modelBuilder.RegisterAllEntities<BaseEntity>(typeof(User).Assembly);
         base.OnModelCreating(modelBuilder);
     }
 
