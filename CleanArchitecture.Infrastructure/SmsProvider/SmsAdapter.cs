@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Common;
+﻿using CleanArchitecture.Application.Common.Interfaces;
 
 namespace CleanArchitecture.Infrastructure.SmsProvider;
 

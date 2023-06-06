@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.ValueObjects;
 
-public class Address
+public class Address : ValueObject
 {
     public string City { get; set; }
     public string Street { get; set; }
