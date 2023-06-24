@@ -80,3 +80,4 @@ C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Pres
 C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Presentation\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Presentation\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Presentation\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Mohammad\Repository\Source\Own\CleanArchitecture\CleanArchitecture.Presentation\bin\Debug\net7.0\Polly.dll

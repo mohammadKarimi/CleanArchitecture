@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CFA6C98E-255
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{96BF7157-1D65-40E5-8592-A2B49910FAE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Application", "CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{440AB0BA-DCA2-4311-9C89-522516A373B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Application", "CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{440AB0BA-DCA2-4311-9C89-522516A373B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E8C6BA59-585A-48FC-8091-F12EDA776398}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infrastructure.Persistence", "CleanArchitecture.Infrastructure.Persistence\CleanArchitecture.Infrastructure.Persistence.csproj", "{199B7156-5246-49FE-A485-4439A592B452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure.Persistence", "CleanArchitecture.Infrastructure.Persistence\CleanArchitecture.Infrastructure.Persistence.csproj", "{199B7156-5246-49FE-A485-4439A592B452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infrastructure", "CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{BB437EE5-9DFD-4B1A-A146-01A71A061967}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure", "CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{BB437EE5-9DFD-4B1A-A146-01A71A061967}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{20B1EDD2-918B-4E10-8992-49785AF45F97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Presentation", "CleanArchitecture.Presentation\CleanArchitecture.Presentation.csproj", "{C988AA77-E4B0-43FE-AB7B-823D76CDA0EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Presentation", "CleanArchitecture.Presentation\CleanArchitecture.Presentation.csproj", "{C988AA77-E4B0-43FE-AB7B-823D76CDA0EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{8E5D1AC6-3A51-4675-8399-5E8AE25B8D77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,7 @@ Global
 		{BB437EE5-9DFD-4B1A-A146-01A71A061967} = {E8C6BA59-585A-48FC-8091-F12EDA776398}
 		{20B1EDD2-918B-4E10-8992-49785AF45F97} = {CFA6C98E-2556-4A1C-87D3-5D6BBB47C820}
 		{C988AA77-E4B0-43FE-AB7B-823D76CDA0EF} = {20B1EDD2-918B-4E10-8992-49785AF45F97}
+		{8E5D1AC6-3A51-4675-8399-5E8AE25B8D77} = {CFA6C98E-2556-4A1C-87D3-5D6BBB47C820}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3983C8FA-FD75-405A-AFF8-5A16EB5937D9}

@@ -16,6 +16,14 @@ public class UserConfig : IEntityTypeConfiguration<User>
             .HasMaxLength(50)
             .IsRequired();
 
+        builder.Property(u => u.UserName)
+            .HasMaxLength(50)
+            .IsRequired();
+
+        builder.Property(u => u.Password)
+            .HasMaxLength(50)
+            .IsRequired();
+
         builder.OwnsOne(b => b.Address);
     }
 }

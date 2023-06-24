@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Common.Behaviours;
+﻿using CleanArchitecture.Application.Authentication;
+using CleanArchitecture.Application.Common.Behaviours;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -15,6 +16,8 @@ public static class ConfigureServices
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
         });
+
+        //  services.AddScoped<IAuthenticationService, AuthenticationService>();
         return services;
     }
 }

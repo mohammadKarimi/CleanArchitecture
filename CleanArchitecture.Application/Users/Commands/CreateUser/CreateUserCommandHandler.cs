@@ -1,5 +1,4 @@
-﻿using CleanArchitecture.Application.Common;
-using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Domain.Entities;
 
 namespace CleanArchitecture.Application.Users.Commands.CreateUser;
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XfDi86kcJzf5s1Ao9F3gKpwP+wK+b4UNWf29QT5kgQ9JWRhyiM9eXVskSULbQqWXwTFxN41LagQrpir6kc1yjg==",
+  "dgSpecHash": "NEQQFatUTTnYdhrc9S2X1pQ+TsaVxJc6nl+n6EWPV6ERURfixZnp+kHV+Y5QdsKfPnWs1+Mqv8tTQqZuSYJqag==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mohammad\\Repository\\Source\\Own\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -15,10 +15,12 @@
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.http\\7.0.0\\microsoft.extensions.http.7.0.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
-    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mohammad\\.nuget\\packages\\polly\\7.2.4\\polly.7.2.4.nupkg.sha512"
   ],
   "logs": []
 }
