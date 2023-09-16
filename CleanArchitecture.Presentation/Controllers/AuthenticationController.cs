@@ -8,11 +8,11 @@ public class AuthenticationController : BaseController
 {
     [HttpPost]
     public async Task<ActionResult<Guid>> Register([FromBody] UserRegisterCommand userRegisterCommand,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken  = default)
        => await Mediator.Send(userRegisterCommand);
 
     [HttpPost]
     public async Task<ActionResult<UserDto>> Login([FromBody] LoginQuery loginQuery,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken  = default)
        => await Mediator.Send(loginQuery);
 }

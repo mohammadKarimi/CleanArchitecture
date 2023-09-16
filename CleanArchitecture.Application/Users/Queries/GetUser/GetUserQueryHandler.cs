@@ -7,7 +7,7 @@ public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetUserDto>
     public GetUserQueryHandler(IApplicationUnitOfWork applicationUnitOfWork)
         => _uow = applicationUnitOfWork;
 
-    public async Task<GetUserDto> Handle(GetUserQuery request, CancellationToken cancellationToken)
+    public async Task<GetUserDto> Handle(GetUserQuery request, CancellationToken cancellationToken = default)
     {
         var result = await _uow.Users
                                    .Select(x => new GetUserDto
