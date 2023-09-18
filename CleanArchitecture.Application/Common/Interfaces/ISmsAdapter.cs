@@ -2,5 +2,5 @@
 
 public interface ISmsAdapter
 {
-    Task<ActionResult> SendAsync(string reciver, string text);
+    Task<ActionResult> SendAsync(string receiver, string text);
 }

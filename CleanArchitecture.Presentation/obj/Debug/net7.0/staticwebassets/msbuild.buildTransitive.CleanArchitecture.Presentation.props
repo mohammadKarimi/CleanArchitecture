@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\CleanArchitecture.Presentation.props" />
-</Project>

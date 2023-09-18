@@ -8,7 +8,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
     public CreateUserCommandHandler(IApplicationUnitOfWork applicationUnitOfWork)
         => _uow = applicationUnitOfWork;
 
-    public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken  = default)
     {
         var user = new User
         {

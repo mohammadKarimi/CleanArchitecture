@@ -31,13 +31,13 @@ internal class SmsAdapter : ISmsAdapter
         _httpClient = httpClientFactory.CreateClient();
     }
 
-    public async Task<ActionResult> SendAsync(string reciver, string text)
+    public async Task<ActionResult> SendAsync(string receiver, string text)
     {
         var result = await _circuitBreakerPolicy.ExecuteAsync(async () =>
        {
            var content = new FormUrlEncodedContent(new[]
                        {
-                new KeyValuePair<string, string>("reciver",reciver),
+                new KeyValuePair<string, string>("receiver",receiver),
                 new KeyValuePair<string, string>("text",text)
            });
            return await _httpClient.PostAsync(url, content);

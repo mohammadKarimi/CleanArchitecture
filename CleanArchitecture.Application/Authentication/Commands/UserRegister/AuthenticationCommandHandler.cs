@@ -9,7 +9,7 @@ public class AuthenticationCommandHandler : IRequestHandler<UserRegisterCommand,
     public AuthenticationCommandHandler(IApplicationUnitOfWork unitOfWork)
          => _uow = unitOfWork;
 
-    public async Task<Guid> Handle(UserRegisterCommand request, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(UserRegisterCommand request, CancellationToken cancellationToken  = default)
     {
         var model = new User
         {
