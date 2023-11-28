@@ -1,9 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.Exceptions;
 
-public class UnSupportedPostalCodeException : Exception
+public class UnSupportedPostalCodeException(string postalCode) 
+    : Exception($"Postalcode \"{postalCode}\" is unsupported.")
 {
-    public UnSupportedPostalCodeException(string postalCode)
-        : base($"Postalcode \"{postalCode}\" is unsupported.")
-    {
-    }
 }
