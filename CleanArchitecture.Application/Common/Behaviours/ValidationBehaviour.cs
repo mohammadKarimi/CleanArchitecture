@@ -3,18 +3,12 @@ using FluentValidation;
 
 namespace CleanArchitecture.Application.Common.Behaviours;
 
-
-public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+public class ValidationBehaviour<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators) : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull
 {
-    private readonly IEnumerable<IValidator<TRequest>> _validators;
+    private readonly IEnumerable<IValidator<TRequest>> _validators = validators;
 
-    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators)
-    {
-        _validators = validators;
-    }
-
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken  = default)
+    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken = default)
     {
         if (_validators.Any())
         {
@@ -25,11 +19,11 @@ public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TReque
                     v.ValidateAsync(context, cancellationToken)));
 
             var failures = validationResults
-                .Where(r => r.Errors.Any())
+                .Where(r => r.Errors.Count != 0)
                 .SelectMany(r => r.Errors)
                 .ToList();
 
-            if (failures.Any())
+            if (failures.Count != 0)
                 throw new ValidationException(failures);
         }
         return await next();
