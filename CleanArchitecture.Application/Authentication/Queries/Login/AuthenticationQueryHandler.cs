@@ -1,15 +1,12 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿namespace CleanArchitecture.Application.Authentication.Queries.Login;
 
-namespace CleanArchitecture.Application.Authentication.Queries.Login;
-
-public class AuthenticationQueryHandler : IRequestHandler<LoginQuery, UserDto>
+public class AuthenticationQueryHandler(IApplicationUnitOfWork unitOfWork)
+    : IRequestHandler<LoginQuery, UserDto>
 {
-    private readonly IApplicationUnitOfWork _uow;
+    private readonly IApplicationUnitOfWork _uow = unitOfWork;
 
-    public AuthenticationQueryHandler(IApplicationUnitOfWork unitOfWork)
-         => _uow = unitOfWork;
-
-    public async Task<UserDto> Handle(LoginQuery request, CancellationToken cancellationToken  = default)
+    public async Task<UserDto> Handle(LoginQuery request,
+                                      CancellationToken cancellationToken = default)
     {
         var user = await _uow.Users.Where(x => x.UserName == request.UserName
                                              && x.Password == request.Password)
@@ -17,12 +14,9 @@ public class AuthenticationQueryHandler : IRequestHandler<LoginQuery, UserDto>
                                   {
                                       Email = x.Email,
                                       FirstName = x.FirstName,
-
                                       LastName = x.LastName
-                                  })
-                                  .FirstOrDefaultAsync(cancellationToken);
+                                  }).FirstOrDefaultAsync(cancellationToken);
         return user ?? null;
     }
 }
 
- 

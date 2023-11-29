@@ -2,14 +2,12 @@
 
 namespace CleanArchitecture.Application.Authentication.Commands.UserRegister;
 
-public class AuthenticationCommandHandler : IRequestHandler<UserRegisterCommand, Guid>
+public class AuthenticationCommandHandler(IApplicationUnitOfWork unitOfWork)
+    : IRequestHandler<UserRegisterCommand, Guid>
 {
-    private readonly IApplicationUnitOfWork _uow;
+    private readonly IApplicationUnitOfWork _uow = unitOfWork;
 
-    public AuthenticationCommandHandler(IApplicationUnitOfWork unitOfWork)
-         => _uow = unitOfWork;
-
-    public async Task<Guid> Handle(UserRegisterCommand request, CancellationToken cancellationToken  = default)
+    public async Task<Guid> Handle(UserRegisterCommand request, CancellationToken cancellationToken = default)
     {
         var model = new User
         {
