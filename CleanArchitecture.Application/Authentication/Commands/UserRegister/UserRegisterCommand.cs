@@ -2,12 +2,11 @@
 
 namespace CleanArchitecture.Application.Authentication.Commands.UserRegister;
 
-public record UserRegisterCommand : IRequest<Guid>
-{
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Email { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public Gender Gender { get; set; }
-}
+public record UserRegisterCommand(
+     string FirstName,
+     string LastName,
+     string Email,
+     string UserName,
+     string Password,
+     Gender Gender
+) : IRequest<Guid>;
