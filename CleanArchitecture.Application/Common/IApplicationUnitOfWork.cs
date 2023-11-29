@@ -9,7 +9,7 @@ public interface IUnitOfWork : IDisposable, IAsyncDisposable
     /// </summary>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public Task<SaveChangesResult> SaveChangesAsync(CancellationToken cancellationToken = default);
+    public Task<Result> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
 
 public interface IApplicationUnitOfWork : IUnitOfWork

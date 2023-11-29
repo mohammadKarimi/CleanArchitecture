@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Application.Common;
 
-public class ActionResult
+public class Result
 {
     public bool IsSuccess { get; init; }
     public bool IsFailure
@@ -8,18 +8,18 @@ public class ActionResult
 
     public string Message { get; init; }
 
-    public ActionResult()
+    public Result()
       => IsSuccess = true;
 
-    public ActionResult(string message)
+    public Result(string message)
     {
         IsSuccess = false;
         Message = message;
     }
 
-    public static ActionResult Failure(string msg)
+    public static Result Failure(string msg)
          => new(msg);
 
-    public static ActionResult Success()
+    public static Result Success()
         => new();
 }

@@ -9,8 +9,8 @@ namespace CleanArchitecture.Infrastructure.SmsProvider;
 
 internal class SmsAdapter : ISmsAdapter
 {
-    private readonly AsyncRetryPolicy<ActionResult> _retryPolicy;
-    private readonly AsyncFallbackPolicy<ActionResult> _fallbackPolicy;
+    private readonly AsyncRetryPolicy<Result> _retryPolicy;
+    private readonly AsyncFallbackPolicy<Result> _fallbackPolicy;
     private static AsyncCircuitBreakerPolicy _circuitBreakerPolicy;
 
     private readonly HttpClient _httpClient;
@@ -23,15 +23,15 @@ internal class SmsAdapter : ISmsAdapter
                                 .CircuitBreakerAsync(2, TimeSpan.FromMinutes(1));
 
 
-        _retryPolicy = Policy<ActionResult>.Handle<Exception>().RetryAsync(2);
+        _retryPolicy = Policy<Result>.Handle<Exception>().RetryAsync(2);
 
-        _fallbackPolicy = Policy<ActionResult>.Handle<Exception>().FallbackAsync
-            (ActionResult.Failure("Error on Sending message"));
+        _fallbackPolicy = Policy<Result>.Handle<Exception>().FallbackAsync
+            (Result.Failure("Error on Sending message"));
 
         _httpClient = httpClientFactory.CreateClient();
     }
 
-    public async Task<ActionResult> SendAsync(string receiver, string text)
+    public async Task<Result> SendAsync(string receiver, string text)
     {
         var result = await _circuitBreakerPolicy.ExecuteAsync(async () =>
        {
