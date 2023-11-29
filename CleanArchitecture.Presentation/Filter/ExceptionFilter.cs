@@ -19,9 +19,9 @@ public class CatchExceptionFilterAttribute : ExceptionFilterAttribute
     private void HandleException(ExceptionContext context)
     {
         Type type = context.Exception.GetType();
-        if (_exceptionHandlers.ContainsKey(type))
+        if (_exceptionHandlers.TryGetValue(type, out Action<ExceptionContext>? value))
         {
-            _exceptionHandlers[type].Invoke(context);
+            value.Invoke(context);
             return;
         }
     }
