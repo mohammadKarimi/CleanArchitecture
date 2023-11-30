@@ -1,22 +1,13 @@
 ﻿namespace CleanArchitecture.Application.Users.Queries.GetUser;
 
-public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetUserDto>
+public class GetUserQueryHandler(IApplicationUnitOfWork applicationUnitOfWork)
+    : IRequestHandler<GetUserQuery, GetUserDto>
 {
-    private readonly IApplicationUnitOfWork _uow;
+    private readonly IApplicationUnitOfWork _uow = applicationUnitOfWork;
 
-    public GetUserQueryHandler(IApplicationUnitOfWork applicationUnitOfWork)
-        => _uow = applicationUnitOfWork;
-
-    public async Task<GetUserDto> Handle(GetUserQuery request, CancellationToken cancellationToken = default)
-    {
-        var result = await _uow.Users
-                                   .Select(x => new GetUserDto
-                                   {
-                                       Email = x.Email,
-                                       Gender = x.Gender,
-                                       Id = x.Id
-                                   })
-                                   .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
-        return result;
-    }
+    public async Task<GetUserDto> Handle(GetUserQuery request,
+                                         CancellationToken cancellationToken = default)
+      => await _uow.Users
+                   .Select(x => new GetUserDto(x.Id, x.Gender, x.Email))
+                   .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 }

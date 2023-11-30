@@ -1,6 +1,3 @@
 ﻿namespace CleanArchitecture.Application.Users.Queries.GetUser;
 
-public record GetUserQuery : IRequest<GetUserDto>
-{
-    public Guid Id { get; set; }
-}
+public record GetUserQuery(Guid Id) : IRequest<GetUserDto>;
