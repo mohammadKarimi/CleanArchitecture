@@ -3,7 +3,8 @@ using System.Reflection;
 
 namespace CleanArchitecture.Infrastructure.Persistence;
 
-public partial class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
+public partial class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    : DbContext(options)
 {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
