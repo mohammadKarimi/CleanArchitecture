@@ -2,13 +2,12 @@
 
 namespace CleanArchitecture.Application.Users.Commands.CreateUser;
 
-public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
+public class CreateUserCommandHandler(IApplicationUnitOfWork applicationUnitOfWork)
+    : IRequestHandler<CreateUserCommand, Guid>
 {
-    private readonly IApplicationUnitOfWork _uow;
-    public CreateUserCommandHandler(IApplicationUnitOfWork applicationUnitOfWork)
-        => _uow = applicationUnitOfWork;
+    private readonly IApplicationUnitOfWork _uow = applicationUnitOfWork;
 
-    public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken  = default)
+    public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken = default)
     {
         var user = new User
         {
