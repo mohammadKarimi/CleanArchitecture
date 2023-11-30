@@ -8,20 +8,21 @@ public partial class ApplicationUnitOfWork(ApplicationDbContext applicationDbCon
 {
     private readonly ApplicationDbContext _context = applicationDbContext;
 
-    public async Task<SaveChangesResult> SaveChangesAsync(CancellationToken cancellationToken = default)
+    public async Task<Result> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         try
         {
             await _context.SaveChangesAsync(cancellationToken);
-            return SaveChangesResult.Success();
+            return Result.Success();
         }
         catch (DbUpdateConcurrencyException e)
         {
-            return SaveChangesResult.Failure(SaveChangesResultType.UpdateConcurrencyException, e.Message);
+            //If you want to do something
+            return Result.Failure(e.Message);
         }
         catch (DbUpdateException e)
         {
-            return SaveChangesResult.Failure(SaveChangesResultType.UpdateException, e.Message);
+            return Result.Failure(e.Message);
         }
     }
 
