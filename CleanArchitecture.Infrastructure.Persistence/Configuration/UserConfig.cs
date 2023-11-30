@@ -1,7 +1,6 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Reflection.Emit;
 
 namespace CleanArchitecture.Infrastructure.Persistence.Configuration;
 
@@ -23,8 +22,8 @@ public class UserConfig : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.Password)
             .HasMaxLength(50)
-        .IsRequired();
+            .IsRequired();
 
-        
+        builder.ComplexProperty(x => x.Address);
     }
 }
